@@ -1,9 +1,9 @@
 FROM opensecurity/mobile-security-framework-mobsf
 
 LABEL version="1.0.0"
-LABEL repository="https://github.com/inm-certi/mobsf-action"
-LABEL homepage="https://github.com/inm-certi/mobsf-action"
-LABEL maintainer="Ian Koerich Maciel <inm@certi.org.br>"
+LABEL repository="https://github.com/dung-bycn/mobsf-action"
+LABEL homepage="https://github.com/dung-bycn/mobsf-action"
+LABEL maintainer="Nguyen Hoang Dung <d.nguyenhoang@bouygues-construction.com>"
 
 LABEL com.github.actions.name="GitHub Action for MobSF"
 LABEL com.github.actions.description="Wraps the MobSF docker to enable common commands."
