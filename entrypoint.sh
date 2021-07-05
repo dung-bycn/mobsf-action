@@ -5,9 +5,11 @@ echo $GITHUB_WORKSPACE
 echo $INPUT_FILE_NAME
 echo $SCAN_TYPE
 echo $OUTPUT_FILE_NAME
+echo $JAVA_HOME
 
 cd $GITHUB_WORKSPACE
-ls -al 
+ls -al
+java --version
 if [ -z "$INPUT_FILE_NAME" ] || [ ! -f "$INPUT_FILE_NAME" ]; then
   echo "INPUT_FILE_NAME is required to run MobSF action. (INPUT_FILE_NAME = $INPUT_FILE_NAME)"
   exit 126
