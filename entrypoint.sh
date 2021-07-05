@@ -1,7 +1,13 @@
 #!/bin/bash
 set -e
 
+echo $GITHUB_WORKSPACE
+echo $INPUT_FILE_NAME
+echo $SCAN_TYPE
+echo $OUTPUT_FILE_NAME
+
 cd $GITHUB_WORKSPACE
+ls -al 
 if [ -z "$INPUT_FILE_NAME" ] || [ ! -f "$INPUT_FILE_NAME" ]; then
   echo "INPUT_FILE_NAME is required to run MobSF action. (INPUT_FILE_NAME = $INPUT_FILE_NAME)"
   exit 126
@@ -26,9 +32,9 @@ export MOBSF_API_KEY="$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c 64)"
 export MOBSF_URL="localhost:8000"
 
 cd /root/Mobile-Security-Framework-MobSF
-# python3 manage.py makemigrations 2&>> manage.out && \
-# python3 manage.py makemigrations StaticAnalyzer 2&>> manage.out && \
-# python3 manage.py migrate 2&>> manage.out
+python3 manage.py makemigrations 2&>> manage.out && \
+python3 manage.py makemigrations StaticAnalyzer 2&>> manage.out && \
+python3 manage.py migrate 2&>> manage.out
 gunicorn -b 127.0.0.1:8000 "mobsf.MobSF.wsgi:application" --workers=1 --threads=10 --timeout=1800 &
 
 # Wait to start MobSF
