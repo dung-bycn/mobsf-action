@@ -1,6 +1,9 @@
 #!/bin/bash
 set -e
-
+GITHUB_WORKSPACE=/root/file/
+INPUT_FILE_NAME=app-release.apk
+SCAN_TYPE=apk
+OUTPUT_FILE_NAME=mobsf-report
 echo $GITHUB_WORKSPACE
 echo $INPUT_FILE_NAME
 echo $SCAN_TYPE
@@ -11,7 +14,7 @@ cd $GITHUB_WORKSPACE
 ls -al
 ls -al $JAVA_HOME
 ls -al $JAVA_HOME/bin
-java --version
+
 if [ -z "$INPUT_FILE_NAME" ] || [ ! -f "$INPUT_FILE_NAME" ]; then
   echo "INPUT_FILE_NAME is required to run MobSF action. (INPUT_FILE_NAME = $INPUT_FILE_NAME)"
   exit 126
