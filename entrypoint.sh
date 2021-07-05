@@ -9,6 +9,8 @@ echo $JAVA_HOME
 
 cd $GITHUB_WORKSPACE
 ls -al
+ls -al $JAVA_HOME
+ls -al $JAVA_HOME/bin
 java --version
 if [ -z "$INPUT_FILE_NAME" ] || [ ! -f "$INPUT_FILE_NAME" ]; then
   echo "INPUT_FILE_NAME is required to run MobSF action. (INPUT_FILE_NAME = $INPUT_FILE_NAME)"
