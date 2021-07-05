@@ -1,9 +1,9 @@
 #!/bin/bash
 set -e
-GITHUB_WORKSPACE=/root/file/
-INPUT_FILE_NAME=app-release.apk
-SCAN_TYPE=apk
-OUTPUT_FILE_NAME=mobsf-report
+# GITHUB_WORKSPACE=/root/file/
+# INPUT_FILE_NAME=app-release.apk
+# SCAN_TYPE=apk
+# OUTPUT_FILE_NAME=mobsf-report
 echo $GITHUB_WORKSPACE
 echo $INPUT_FILE_NAME
 echo $SCAN_TYPE
